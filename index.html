@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Practical digital tools, templates and guides for better work.">
+  <meta name="theme-color" content="#ffffff">
+  <title>YOUR BRAND — Digital tools for better work</title>
+  <style>
+    :root{--ink:#111;--muted:#707070;--line:#e9e9e9;--soft:#f6f6f4;--white:#fff;--black:#111;--radius:18px;--shadow:0 18px 50px rgba(0,0,0,.09)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--white);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}
+    button,input{font:inherit}button{cursor:pointer}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+    .announcement{background:#111;color:#fff;text-align:center;padding:9px 16px;font-size:12px;letter-spacing:.08em}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-size:20px;font-weight:850;letter-spacing:-.07em;text-decoration:none;color:var(--ink);white-space:nowrap}.brand span{font-weight:400}
+    .navlinks{display:flex;align-items:center;gap:28px}.navlinks a{font-size:13px;text-decoration:none;color:#444}.navlinks a:hover,.textlink:hover{color:#888}
+    .navright{display:flex;align-items:center;gap:10px}.iconbtn,.menu-btn{border:1px solid var(--line);background:#fff;border-radius:50px;padding:10px 13px;color:#111}.cart-count{display:inline-grid;place-items:center;background:#111;color:#fff;border-radius:50%;font-size:10px;width:18px;height:18px;margin-left:5px}
+    .menu-btn{display:none}.hero{padding:76px 0 64px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:#777;font-weight:700}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+    h1{font-size:clamp(42px,6vw,76px);letter-spacing:-.075em;line-height:.99;margin:18px 0 22px;max-width:700px}.hero p{color:#686868;font-size:16px;max-width:490px;line-height:1.8}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{border:1px solid #111;border-radius:50px;padding:13px 21px;background:#111;color:#fff;font-weight:650;font-size:13px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s}.btn:hover{background:#333;transform:translateY(-1px)}.btn.secondary{background:#fff;color:#111;border-color:#ddd}.btn.secondary:hover{border-color:#111}
+    .hero-art{min-height:360px;border-radius:28px;background:#f2f2ef;position:relative;overflow:hidden;display:grid;place-items:center}.art-card{width:70%;height:270px;background:#fff;border:1px solid #e6e6e2;border-radius:15px;box-shadow:0 22px 55px rgba(0,0,0,.1);padding:22px;transform:rotate(-5deg);position:relative}.art-top{display:flex;justify-content:space-between;font-size:10px;color:#777}.art-title{font-size:24px;font-weight:800;letter-spacing:-1.5px;margin:27px 0 18px}.bars{height:85px;display:flex;align-items:end;gap:9px;border-bottom:1px solid #eee;padding:0 10px}.bars i{display:block;background:#111;width:12%;border-radius:5px 5px 0 0}.bars i:nth-child(1){height:35%}.bars i:nth-child(2){height:62%}.bars i:nth-child(3){height:48%}.bars i:nth-child(4){height:85%}.bars i:nth-child(5){height:70%}.bars i:nth-child(6){height:100%}.art-label{position:absolute;right:9%;bottom:12%;background:#111;color:#fff;padding:12px 17px;border-radius:9px;font-size:11px;letter-spacing:.05em}
+    .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0}.trust-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#666;font-size:12px}.trust-row span{display:flex;gap:8px;align-items:center}.dot{width:5px;height:5px;background:#111;border-radius:50%}
+    section{padding:76px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:28px}.section-head h2{font-size:clamp(28px,4vw,42px);letter-spacing:-.06em;margin:8px 0 0}.section-head p{color:var(--muted);font-size:13px;margin:0}
+    .category-row{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:26px}.chip{border:1px solid var(--line);background:#fff;color:#555;border-radius:40px;padding:9px 15px;font-size:12px}.chip.active,.chip:hover{background:#111;color:#fff;border-color:#111}
+    .tools-row{display:flex;gap:10px;margin-bottom:25px}.search{flex:1;min-width:0;border:1px solid var(--line);border-radius:50px;padding:12px 17px;outline:none;font-size:13px}.search:focus{border-color:#777}.sort{border:1px solid var(--line);border-radius:50px;padding:0 14px;background:#fff;font-size:12px}
+    .products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.product{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;transition:.2s}.product:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.product-visual{height:190px;padding:18px;display:grid;place-items:center;position:relative;overflow:hidden;background:#f4f4f1}.product-visual .mock{width:78%;height:128px;background:#fff;border:1px solid #e4e4e0;border-radius:9px;box-shadow:0 12px 25px rgba(0,0,0,.08);padding:13px;transform:rotate(-4deg)}.mock small{font-size:8px;color:#888}.mock strong{display:block;font-size:14px;letter-spacing:-.5px;margin:9px 0}.mock .line{height:5px;background:#eee;border-radius:5px;margin:6px 0;width:75%}.mock .line.short{width:45%}.mock .mini-bars{display:flex;gap:5px;align-items:end;height:32px;margin-top:10px}.mini-bars i{width:13%;background:#222;border-radius:2px 2px 0 0}.mini-bars i:nth-child(1){height:40%}.mini-bars i:nth-child(2){height:70%}.mini-bars i:nth-child(3){height:55%}.mini-bars i:nth-child(4){height:100%}.mini-bars i:nth-child(5){height:80%}
+    .product-visual.green{background:#eef1eb}.product-visual.gray{background:#f0f0f0}.product-visual.sand{background:#f3eee7}.product-visual.lilac{background:#efedf2}.tag{position:absolute;top:13px;left:13px;background:#fff;border-radius:30px;padding:5px 9px;font-size:9px;font-weight:700;letter-spacing:.04em}.product-info{padding:16px}.product-cat{font-size:10px;color:#888;text-transform:uppercase;letter-spacing:.12em}.product h3{font-size:15px;letter-spacing:-.03em;margin:6px 0 5px}.product-desc{font-size:11px;color:#777;min-height:34px}.product-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:15px}.price{font-size:14px;font-weight:750}.add{width:34px;height:34px;border:1px solid #ddd;border-radius:50%;background:#fff;font-size:18px}.add:hover{background:#111;color:#fff;border-color:#111}.empty{grid-column:1/-1;text-align:center;padding:45px;color:#777;border:1px dashed #ddd;border-radius:15px}
+    .banner{background:#111;color:#fff;border-radius:24px;padding:48px;display:flex;align-items:center;justify-content:space-between;gap:30px}.banner h2{font-size:clamp(27px,4vw,42px);line-height:1.05;letter-spacing:-.06em;margin:10px 0}.banner p{color:#bbb;font-size:13px;max-width:450px}.banner .btn{background:#fff;color:#111;border-color:#fff;white-space:nowrap}
+    .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.benefit{padding:24px;border:1px solid var(--line);border-radius:16px}.benefit .symbol{font-size:22px}.benefit h3{font-size:15px;margin:16px 0 6px}.benefit p{font-size:12px;color:#777;margin:0;line-height:1.7}
+    footer{background:#f7f7f5;padding:48px 0 25px}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:30px}.footer-grid p{font-size:12px;color:#777;max-width:300px}.footer-grid h4{font-size:11px;text-transform:uppercase;letter-spacing:.12em}.footer-grid a{display:block;color:#666;text-decoration:none;font-size:12px;margin:9px 0}.copyright{border-top:1px solid #e5e5e2;margin-top:35px;padding-top:18px;color:#888;font-size:10px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:40;opacity:0;pointer-events:none;transition:.2s}.overlay.show{opacity:1;pointer-events:auto}.drawer{position:fixed;right:0;top:0;height:100%;width:min(420px,100%);background:#fff;z-index:41;transform:translateX(105%);transition:.25s;padding:25px;display:flex;flex-direction:column}.drawer.show{transform:translateX(0)}.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:18px}.drawer-head h3{margin:0}.close{border:1px solid var(--line);background:#fff;border-radius:50%;width:35px;height:35px}.cart-items{overflow:auto;flex:1;padding:15px 0}.cart-item{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}.cart-item strong{font-size:12px}.cart-item small{display:block;color:#888;margin-top:4px}.remove{border:0;background:none;text-decoration:underline;color:#888;font-size:11px}.cart-total{border-top:1px solid var(--line);padding-top:17px}.total-row{display:flex;justify-content:space-between;font-weight:750;margin-bottom:15px}.cart-note{font-size:10px;color:#888;line-height:1.6;margin-top:12px}.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);background:#111;color:#fff;padding:11px 17px;border-radius:40px;font-size:12px;opacity:0;transition:.2s;z-index:60;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
+    .modal{position:fixed;inset:0;z-index:50;display:none;place-items:center;padding:20px;background:rgba(0,0,0,.4)}.modal.show{display:grid}.modal-card{background:#fff;border-radius:18px;padding:26px;width:min(480px,100%);position:relative}.modal-card h3{font-size:23px;letter-spacing:-.05em;margin:10px 0}.modal-card p{font-size:13px;color:#777;line-height:1.7}.modal-card .close{position:absolute;right:18px;top:18px}
+    @media(max-width:850px){.products{grid-template-columns:repeat(2,1fr)}.hero-grid{grid-template-columns:1fr;gap:35px}.hero-art{min-height:300px}.navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:20px;flex-direction:column;align-items:flex-start}.navlinks.open{display:flex}.menu-btn{display:inline-block}.benefits{grid-template-columns:1fr}.banner{padding:32px;align-items:flex-start;flex-direction:column}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}}
+    @media(max-width:520px){.wrap{width:min(100% - 28px,1160px)}.nav{height:66px}.navlinks{top:66px}.hero{padding:52px 0 45px}.hero-art{min-height:255px}.art-card{height:210px}.art-title{font-size:20px;margin:20px 0 12px}.bars{height:60px}.section-head{align-items:flex-start;flex-direction:column}.products{gap:10px}.product-visual{height:145px;padding:10px}.product-visual .mock{height:108px;width:88%;padding:9px}.product-info{padding:12px}.product h3{font-size:13px}.product-desc{font-size:10px}.tools-row{flex-direction:column}.sort{padding:12px}.footer-grid{grid-template-columns:1fr 1fr}.copyright{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="announcement">DIGITAL TOOLS FOR WORK, BUSINESS & EVERYDAY PRODUCTIVITY</div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#" aria-label="Home">YOUR<span>BRAND.</span></a>
+      <nav class="navlinks" id="navlinks">
+        <a href="#shop" data-category="All">Shop all</a>
+        <a href="#shop" data-category="Excel">Excel templates</a>
+        <a href="#shop" data-category="Power BI">Power BI</a>
+        <a href="#shop" data-category="AI Prompts">AI prompts</a>
+        <a href="#shop" data-category="E-books">E-books</a>
+      </nav>
+      <div class="navright">
+        <button class="iconbtn" id="cartOpen" aria-label="Open shopping cart">Bag <span class="cart-count" id="cartCount">0</span></button>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">A smarter way to get things done</div>
+          <h1>Useful digital tools. <br>Better work.</h1>
+          <p>Discover practical templates, dashboards and digital guides designed to help you save time, stay organised and make better decisions.</p>
+          <div class="actions"><a class="btn" href="#shop">Explore products <span>↗</span></a><a class="btn secondary" href="#why-us">Why shop with us?</a></div>
+        </div>
+        <div class="hero-art" aria-label="Illustration of a business dashboard">
+          <div class="art-card"><div class="art-top"><span>BUSINESS OVERVIEW</span><span>2026 ↗</span></div><div class="art-title">Make your next<br>move clearer.</div><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="art-label">TOOLS THAT WORK FOR YOU.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust"><div class="wrap trust-row"><span><i class="dot"></i> Instant digital access after launch</span><span><i class="dot"></i> Practical, easy-to-use resources</span><span><i class="dot"></i> Built for work and productivity</span></div></div>
+
+    <section id="shop">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">The digital collection</div><h2>Find your next useful tool.</h2></div><p>Explore templates, dashboards and guides.</p></div>
+        <div class="category-row" id="categories">
+          <button class="chip active" data-filter="All">All products</button>
+          <button class="chip" data-filter="Excel">Excel templates</button>
+          <button class="chip" data-filter="Power BI">Power BI</button>
+          <button class="chip" data-filter="AI Prompts">AI prompts</button>
+          <button class="chip" data-filter="E-books">E-books & guides</button>
+        </div>
+        <div class="tools-row"><input class="search" id="search" type="search" placeholder="Search digital products..." aria-label="Search products"><select class="sort" id="sort" aria-label="Sort products"><option value="featured">Sort: Featured</option><option value="low">Price: Low to high</option><option value="high">Price: High to low</option></select></div>
+        <div class="products" id="products"></div>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="wrap"><div class="banner"><div><div class="eyebrow" style="color:#aaa">Make work feel simpler</div><h2>Less time setting up.<br>More time moving forward.</h2><p>Explore practical digital resources created to make everyday business and productivity tasks easier.</p></div><a class="btn" href="#shop">Browse the collection ↗</a></div></div>
+    </section>
+
+    <section id="why-us">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">A better digital shopping experience</div><h2>Simple by design.</h2></div></div>
+        <div class="benefits">
+          <div class="benefit"><div class="symbol">↗</div><h3>Practical resources</h3><p>Useful digital products designed around real tasks, workflows and everyday challenges.</p></div>
+          <div class="benefit"><div class="symbol">◇</div><h3>Easy to understand</h3><p>Clear product information helps you choose the right resource for your needs.</p></div>
+          <div class="benefit"><div class="symbol">↓</div><h3>Digital convenience</h3><p>Our planned checkout and download experience will make accessing purchases straightforward.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div><a class="brand" href="#">YOUR<span>BRAND.</span></a><p>Thoughtful digital tools for business, productivity and better work.</p></div>
+        <div><h4>Explore</h4><a href="#shop">All products</a><a href="#shop" data-category="Excel">Excel templates</a><a href="#shop" data-category="Power BI">Power BI dashboards</a><a href="#shop" data-category="AI Prompts">AI prompts</a></div>
+        <div><h4>Information</h4><a href="#why-us">About the store</a><a href="mailto:hello@example.com">Contact (update email)</a><a href="#shop">FAQs coming soon</a></div>
+      </div>
+      <div class="copyright"><span>© <span id="year"></span> YOUR BRAND. All rights reserved.</span><span>Digital products • Sri Lanka & worldwide</span></div>
+    </div>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer" aria-label="Shopping cart">
+    <div class="drawer-head"><h3>Your bag</h3><button class="close" id="cartClose" aria-label="Close cart">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-total"><div class="total-row"><span>Subtotal</span><span id="cartTotal">$0.00</span></div><button class="btn" style="width:100%" id="checkoutBtn">Checkout – coming soon</button><div class="cart-note">Demo storefront: checkout and payments are not connected yet. No payment will be taken in this version.</div></div>
+  </aside>
+  <div class="modal" id="productModal"><div class="modal-card"><button class="close" id="modalClose" aria-label="Close">×</button><div class="eyebrow" id="modalCat"></div><h3 id="modalTitle"></h3><p id="modalDesc"></p><div class="total-row"><span>Demo price</span><span id="modalPrice"></span></div><button class="btn" id="modalAdd">Add to bag</button></div></div>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script>
+    // DEMO CATALOGUE: replace these sample products with your real products before launch.
+    const products = [
+      {id:1,name:"Excel Sales Dashboard",category:"Excel",description:"A clean sales tracking and performance dashboard for everyday reporting.",price:5,tag:"BESTSELLER",tone:"green",kind:"dashboard"},
+      {id:2,name:"Inventory Management Kit",category:"Excel",description:"Organise stock levels, movements and reorder information in one workbook.",price:5,tag:"POPULAR",tone:"sand",kind:"sheet"},
+      {id:3,name:"Sales Forecasting Template",category:"Excel",description:"Plan future sales with a structured forecasting workbook.",price:9,tag:"",tone:"gray",kind:"chart"},
+      {id:4,name:"Retail Analytics Dashboard",category:"Power BI",description:"A sample retail performance dashboard for learning and reporting.",price:19,tag:"FEATURED",tone:"lilac",kind:"dashboard"},
+      {id:5,name:"Power BI KPI Starter",category:"Power BI",description:"A starter dashboard concept for monitoring business KPIs.",price:15,tag:"",tone:"green",kind:"chart"},
+      {id:6,name:"Business AI Prompt Pack",category:"AI Prompts",description:"A curated starter collection of prompts for common business tasks.",price:5,tag:"NEW",tone:"sand",kind:"prompt"},
+      {id:7,name:"Productivity Prompt Bundle",category:"AI Prompts",description:"Prompts for planning, writing, research and organising work.",price:7,tag:"",tone:"gray",kind:"prompt"},
+      {id:8,name:"Power BI Beginner Guide",category:"E-books",description:"A beginner-friendly introduction to dashboards and reporting concepts.",price:9,tag:"",tone:"lilac",kind:"book"}
+    ];
+    let activeFilter="All", cart=[], selectedProduct=null;
+    const $=id=>document.getElementById(id);
+    const money=n=>"$"+n.toFixed(2);
+    function visual(p){return `<div class="product-visual ${p.tone}">${p.tag?`<span class="tag">${p.tag}</span>`:""}<div class="mock"><small>${p.category.toUpperCase()} / DIGITAL RESOURCE</small><strong>${p.kind==="book"?"A CLEARER WAY TO LEARN":p.kind==="prompt"?"THINK. CREATE. IMPROVE.":p.name.toUpperCase()}</strong><div class="line"></div><div class="line short"></div><div class="mini-bars"><i></i><i></i><i></i><i></i><i></i></div></div></div>`}
+    function renderProducts(){
+      let list=products.filter(p=>(activeFilter==="All"||p.category===activeFilter)&&(`${p.name} ${p.category} ${p.description}`).toLowerCase().includes($("search").value.toLowerCase()));
+      if($("sort").value==="low")list.sort((a,b)=>a.price-b.price);if($("sort").value==="high")list.sort((a,b)=>b.price-a.price);
+      $("products").innerHTML=list.length?list.map(p=>`<article class="product">${visual(p)}<div class="product-info"><div class="product-cat">${p.category}</div><h3>${p.name}</h3><div class="product-desc">${p.description}</div><div class="product-bottom"><span class="price">${money(p.price)}</span><button class="add" data-add="${p.id}" aria-label="Add ${p.name} to bag">+</button></div></div></article>`).join(""):`<div class="empty">No products found. Try another search or category.</div>`;
+      document.querySelectorAll("[data-add]").forEach(b=>b.addEventListener("click",()=>addToCart(Number(b.dataset.add))));
+      document.querySelectorAll(".product").forEach((el,i)=>el.addEventListener("click",e=>{if(e.target.closest("button"))return;showProduct(list[i])}));
+    }
+    function setFilter(f){activeFilter=f;document.querySelectorAll(".chip").forEach(c=>c.classList.toggle("active",c.dataset.filter===f));renderProducts();$("shop").scrollIntoView({behavior:"smooth"});}
+    document.querySelectorAll("[data-filter]").forEach(b=>b.addEventListener("click",()=>setFilter(b.dataset.filter)));
+    document.querySelectorAll("[data-category]").forEach(a=>a.addEventListener("click",()=>{setFilter(a.dataset.category);$("navlinks").classList.remove("open")}));
+    $("search").addEventListener("input",renderProducts);$("sort").addEventListener("change",renderProducts);
+    function toast(msg){$("toast").textContent=msg;$("toast").classList.add("show");setTimeout(()=>$("toast").classList.remove("show"),1900)}
+    function addToCart(id){let p=products.find(x=>x.id===id);let item=cart.find(x=>x.id===id);if(item)item.qty++;else cart.push({...p,qty:1});renderCart();toast("Added to your bag");}
+    function renderCart(){$("cartCount").textContent=cart.reduce((s,p)=>s+p.qty,0);$("cartItems").innerHTML=cart.length?cart.map(p=>`<div class="cart-item"><div><strong>${p.name}</strong><small>${money(p.price)} × ${p.qty}</small></div><div><strong>${money(p.price*p.qty)}</strong><br><button class="remove" data-remove="${p.id}">Remove</button></div></div>`).join(""):`<div class="empty">Your bag is empty.<br>Explore the collection to find something useful.</div>`;$("cartTotal").textContent=money(cart.reduce((s,p)=>s+p.price*p.qty,0));document.querySelectorAll("[data-remove]").forEach(b=>b.addEventListener("click",()=>{cart=cart.filter(p=>p.id!==Number(b.dataset.remove));renderCart()}))}
+    function openCart(){$("overlay").classList.add("show");$("drawer").classList.add("show")}function closeCart(){$("overlay").classList.remove("show");$("drawer").classList.remove("show")}
+    $("cartOpen").addEventListener("click",openCart);$("cartClose").addEventListener("click",closeCart);$("overlay").addEventListener("click",closeCart);
+    $("checkoutBtn").addEventListener("click",()=>toast("Checkout will be added in Phase 2."));
+    function showProduct(p){selectedProduct=p;$("modalCat").textContent=p.category;$("modalTitle").textContent=p.name;$("modalDesc").textContent=p.description;$("modalPrice").textContent=money(p.price);$("productModal").classList.add("show")}
+    $("modalClose").addEventListener("click",()=>$("productModal").classList.remove("show"));$("productModal").addEventListener("click",e=>{if(e.target===$("productModal"))$("productModal").classList.remove("show")});
+    $("modalAdd").addEventListener("click",()=>{if(selectedProduct)addToCart(selectedProduct.id);$("productModal").classList.remove("show")});
+    $("menuBtn").addEventListener("click",()=>$("navlinks").classList.toggle("open"));
+    $("year").textContent=new Date().getFullYear();renderProducts();renderCart();
+  </script>
+</body>
+</html>
